@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300;700&family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: #7a5b8f;
+    background: url(./bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.title {
+    color: rgb(234, 61, 182);
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.title h2 {
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: black;
+    padding-bottom: .2ch;
+    font-weight: sans-serif;
+    font-family: 'Changa', sans-serif;
+    font-size: 3em;
+    letter-spacing: 3px;
+}
+
+span {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    font-size: 4em;
+    font-weight: bold;
+    letter-spacing: 10px;
+    padding-bottom: 2   ch;
+    position: relative;
+    text-transform: uppercase;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: 0.8s;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes animate{
+    0%, 100%{bottom:0;}
+    60%{bottom: 15px;}
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+}
+
+.main{
+    position: relative;
+}
+
+img {
+    filter: grayscale(100%);
+    transition: 1s;
+}
+img:hover{
+    filter: grayscale(0);
+}
+
+.main h1 {
+    text-align: center;
+    padding-top: 2ch;
+    font-family: 'Changa', sans-serif;
+    color: #d3a0ff;
+    font-size: 2em;
+}
+
+.main {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.main img {
+    float: left;
+    width: 33.33%;
+    padding: 3px;
+    margin: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    display: flex; 
+    height: 500px; 
+    top: -30px;
+}
+
+
+.content{
+    width: 400px;
+    background: #d3a0ff;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s; 
+    top: 93%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.content h3{
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    text-align: justify;
+}
+
+.content p {
+    line-height: 1.4;
+    font-family: 'Changa', sans-serif;
+    text-align: justify;
+    
+}
+
+.content::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    bottom: 95%;
+    left: 50%;
+    background: #d3a0ff;
+    margin-left: -5px;
+    transform: rotate(45deg) translateY(50%);
+}
+
+.content::after{
+    top: 100%;
+    left: 50%;
+}
+
+
+img:hover + .content {
+    visibility: visible;
+    opacity: 1;
+}
+
